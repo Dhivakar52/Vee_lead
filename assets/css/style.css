@@ -982,6 +982,7 @@ a:hover {
 
 .questionTitle p{
   font-size: 14px;
+  line-height: 1.7;
 }
 .questionTitle p span{
   color: var(--sub-title-color);
@@ -1005,7 +1006,7 @@ a:hover {
 
 
         .benefit-card {
-          height: 260px;
+          height: 240px;
             background: white;
             border-radius: 12px;
             padding: 30px;
@@ -1386,7 +1387,7 @@ a:hover {
             background: #ffffff;
             border: 2px solid #FF6B0033;
             border-radius: 8px;
-            padding: 30px 25px;
+            padding: 30px 13px;
             height: 100%;
             transition: all 0.5s ease;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -1422,7 +1423,7 @@ a:hover {
 
         
         .icon-wrapper i {
-            font-size: 24px;
+            font-size: 28px;
             color: #ff6b35;
         }
         
@@ -2169,7 +2170,7 @@ a:hover {
             color: #333;
             font-weight: 500;
             font-size: 15px;
-            padding: 18px 20px;
+            padding: 5px 20px;
             box-shadow: none;
             border: none;
             display: flex;
@@ -2581,6 +2582,15 @@ a:hover {
 @media only screen and (min-width: 640px) and (max-width: 768px) {
 }
 @media only screen and (max-width: 768px) {
+
+  .questionTitle p span {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+ .certification-badges .owl-item{
+  display: flex;
+  justify-content: center;
+ } 
    .topbar-section {
                 padding: 10px 0;
             }
@@ -2684,6 +2694,9 @@ a:hover {
 @media only screen and (min-width: 480px) {
 }
 @media only screen and (max-width: 480px) {
+  .system-card {
+    padding: 15px 20px;
+}
   .mobile_flex{
     display: flex;
     justify-content: center;
