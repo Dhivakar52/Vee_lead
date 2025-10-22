@@ -544,7 +544,10 @@ a:hover {
         .menu_space{
           margin: 0px auto 0px 20px;
         }
-
+           .menu_space .nav-link{
+            color: var(--sub-title-color);
+            font-weight: 700;
+           }
         .navbar-brand img {
             height: 35px;
         }
@@ -935,7 +938,7 @@ a:hover {
 
 .benefit_bg {
     background: #D4DCFF;
-    padding: 20px 0px;
+    padding: 35px 0px;
 }
 
         .header-section h1 {
@@ -974,35 +977,7 @@ a:hover {
             font-size: 1.8rem;
         }
 
-        .icon-blue {
-            background: #e3f2fd;
-            color: #2196f3;
-        }
 
-        .icon-yellow {
-            background: #fff9e6;
-            color: #ffc107;
-        }
-
-        .icon-green {
-            background: #e8f5e9;
-            color: #4caf50;
-        }
-
-        .icon-purple {
-            background: #f3e5f5;
-            color: #9c27b0;
-        }
-
-        .icon-pink {
-            background: #fce4ec;
-            color: #e91e63;
-        }
-
-        .icon-indigo {
-            background: #e8eaf6;
-            color: #5c6bc0;
-        }
 
         .benefit-card h3 {
             color: #1a237e;
@@ -1503,11 +1478,15 @@ a:hover {
         
 
 
-.blue_bg{
-  background-color: #323F7C;
+.blue_bg {
   padding: 60px 30px;
-  /* background: url('../images/contact_bg.png'); */
+  background-color: #323F7C; 
+  background-image: url('../images/contact_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
+
 .right-content img{
      height: 395px;
     object-fit: cover;
@@ -2329,7 +2308,35 @@ a:hover {
             margin: 0;
             padding: 15px;
         }
+        .icon-blue ,.icon-blue i {
+            background: #e3f2fd !important;
+            color: #2196f3 !important;
+        }
 
+        .icon-yellow,.icon-yellow i   {
+            background: #fff9e6 !important;
+            color: #ffc107 !important;
+        }
+
+        .icon-green ,.icon-green i {
+            background: #e8f5e9 !important;
+            color: #4caf50 !important;
+        }
+
+        .icon-purple, .icon-purple i {
+            background: #f3e5f5 !important;
+            color: #9c27b0 !important;
+        }
+
+        .icon-pink , .icon-pink i {
+            background: #fce4ec !important;
+            color: #e91e63 !important;
+        }
+
+        .icon-indigo , .icon-indigo i {
+            background: #e8eaf6 !important;
+            color: #5c6bc0 !important;
+        }
 
 /***** Responsive CSS START *****/
 @media only screen and (min-width: 1920px) {
