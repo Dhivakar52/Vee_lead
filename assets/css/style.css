@@ -1565,6 +1565,13 @@ a:hover {
      height: auto;
     object-fit: cover;
 }
+.right_content_two img{
+   min-height: 369px;
+     height: auto;
+    object-fit: cover;
+}
+
+
         .blue_title h3{
             color: #fff;
         }
