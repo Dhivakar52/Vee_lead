@@ -31,7 +31,7 @@
   <body>
 
 
-   <div class="topbar-section">
+   <div class="topbar-section d-none d-md-block">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="topbar-info">
@@ -63,7 +63,7 @@
   <div class="container">
     <!-- Logo -->
     <a class="navbar-brand" href="#">
-      <img src="assets/images/footer_logo.png" class="img-fluid" alt="">
+      <img src="assets/images/header_logo.png" class="img-fluid" alt="">
     </a>
 
     <!-- Hamburger button -->
@@ -97,7 +97,7 @@
 
 
     <!-- Hero Section -->
-    <section class="hero-main-section">
+    <section class="hero-main-section mb-4">
         <div class="container">
             <div class="row hero-content-wrapper">
                 <div class="col-lg-7">
@@ -129,8 +129,10 @@
                             <span class="stat-label">Expert Support</span>
                         </div>
                     </div>
-
-                    <button class="hero-cta-btn">Talk to an Expert</button>
+                        <div class="mobile_flex">
+                                <button class="hero-cta-btn">Talk to an Expert</button>
+                        </div>
+                    
                 </div>
 
                 <div class="col-lg-5">
@@ -154,7 +156,7 @@
                                 <div class="badge-title">Business Applications</div>
                             </div>
 
-                            <div class="badge-card">
+                            <div class="badge-card d-none">
                                 <div class="microsoft-logo">
                                     <div class="ms-squares">
                                         <div class="ms-square ms-red"></div>
@@ -215,7 +217,7 @@
               <h3>Dynamics 365 Business Central</h3>
           </div>
           <div class="row align-items-center">
-             <div class="col-md-8">
+             <div class="col-md-8 mb-3">
               <div class="questionTitle mb-3">
                  <p> <span >What?</span> <br>
                 Microsoft Dynamics 365 Business Central is an all-in-one ERP designed for small to mid-sized businesses to simplify operations, enhance financial insights, and accelerate growth. It unifies finance, supply chain, sales, service, and project management into a single system with powerful automation, real-time analytics, and seamless Microsoft 365 integration.
@@ -340,7 +342,7 @@
               <p>Our gold standard Business Central development services help businesses customize, extend, and optimize their ERP for seamless operations. Whether it's custom module development, API integrations, or workflow automation, we enable businesses to adapt, scale, and enhance efficiency with tailored solutions. From SMBs to large enterprises, we ensure your Business Central implementation aligns with your unique business processes and growth strategy.</p>
           </div>
 
-              <div class="main-container">
+              <div class="main-container desktop-tabs-view">
        
         
         <!-- Service  Tabs -->
@@ -767,6 +769,206 @@
         </div>
     </div>
 
+
+          <!-- Mobile View - Accordion (Show on small screens) -->
+        <div class="mobile-accordion-view service_accordion">
+            <div class="accordion services-accordion" id="servicesAccordion">
+                
+                <!-- Implementation -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionImplementation">
+                          
+                            Implementation
+                        </button>
+                    </h2>
+                    <div id="accordionImplementation" class="accordion-collapse collapse show" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Implementation Services</h3>
+                                <p>We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Structured business analysis and planning phase</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Systematic deployment with minimal disruption</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Comprehensive user training programs</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Faster go-live with proven methodologies</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upgrade -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionUpgrade">
+                            Upgrade
+                        </button>
+                    </h2>
+                    <div id="accordionUpgrade" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Upgrade Services</h3>
+                                <p>Seamless migration to the latest version with minimal downtime and maximum efficiency.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Version assessment and planning</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Data migration and testing</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionSupport">
+                            Support
+                        </button>
+                    </h2>
+                    <div id="accordionSupport" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Support Services</h3>
+                                <p>24/7 expert support to keep your business running smoothly.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Round-the-clock availability</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Quick issue resolution</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionDevelopment">
+                            Development
+                        </button>
+                    </h2>
+                    <div id="accordionDevelopment" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Development Services</h3>
+                                <p>Custom development solutions tailored to your unique business requirements.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom module development</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">API integration</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Migration -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMigration">
+                            Migration
+                        </button>
+                    </h2>
+                    <div id="accordionMigration" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Migration Services</h3>
+                                <p>Smooth data migration from legacy systems to Business Central.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Data assessment and mapping</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Secure data transfer</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integration -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionIntegration">
+                            Integration
+                        </button>
+                    </h2>
+                    <div id="accordionIntegration" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Integration Services</h3>
+                                <p>Connect Business Central with your existing tools and platforms.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Third-party integrations</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">API development</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionApplication">
+                            Application
+                        </button>
+                    </h2>
+                    <div id="accordionApplication" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Application Services</h3>
+                                <p>Custom application development for Business Central.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom app development</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Extension configuration</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reporting -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionReporting">
+                            Reporting
+                        </button>
+                    </h2>
+                    <div id="accordionReporting" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Reporting Services</h3>
+                                <p>Advanced reporting and analytics solutions.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom report development</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Power BI integration</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customization -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCustomization">
+                            Customization
+                        </button>
+                    </h2>
+                    <div id="accordionCustomization" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Customization Services</h3>
+                                <p>Tailor Business Central to fit your exact business needs.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">UI/UX customization</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Workflow modifications</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
      </div>
       </div>
   </div>
@@ -799,7 +1001,10 @@
                         </h2>
                         <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#industryAccordion">
                             <div class="accordion-body">
-                                Automatize processes, utilize resources to the fullest and reduce downtimes.
+
+                                  <img src="assets/images/solution_img.png" class="img-fluid mb-2 mobile-accordion-view rounded" alt="Modern manufacturing facility with automated production line">
+
+                                   <p>Automatize processes, utilize resources to the fullest and reduce downtimes.</p>  
                             </div>
                         </div>
                     </div>
@@ -812,6 +1017,7 @@
                         </h2>
                         <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
                             <div class="accordion-body">
+                                 <img src="assets/images/solution_img.png" class="img-fluid mb-2 mobile-accordion-view rounded" alt="Modern manufacturing facility with automated production line">
                                 Streamline operations, enhance customer experience, and integrate online and offline channels seamlessly.
                             </div>
                         </div>
@@ -825,6 +1031,7 @@
                         </h2>
                         <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
                             <div class="accordion-body">
+                                 <img src="assets/images/solution_img.png" class="img-fluid mb-2 mobile-accordion-view rounded" alt="Modern manufacturing facility with automated production line">
                                 Optimize inventory management, improve logistics efficiency, and gain real-time visibility across your supply chain.
                             </div>
                         </div>
@@ -838,6 +1045,7 @@
                         </h2>
                         <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
                             <div class="accordion-body">
+                                 <img src="assets/images/solution_img.png" class="img-fluid mb-2 mobile-accordion-view rounded" alt="Modern manufacturing facility with automated production line">
                                 Manage projects effectively, track time and resources, and deliver exceptional client services with streamlined operations.
                             </div>
                         </div>
@@ -851,6 +1059,7 @@
                         </h2>
                         <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
                             <div class="accordion-body">
+                                 <img src="assets/images/solution_img.png" class="img-fluid mb-2 mobile-accordion-view rounded" alt="Modern manufacturing facility with automated production line">
                                 Automate financial processes, ensure compliance, and gain real-time insights into your financial performance.
                             </div>
                         </div>
@@ -864,6 +1073,7 @@
                         </h2>
                         <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
                             <div class="accordion-body">
+                                 <img src="assets/images/solution_img.png" class="img-fluid mb-2 mobile-accordion-view rounded" alt="Modern manufacturing facility with automated production line">
                                 Manage patient care, ensure regulatory compliance, and optimize operations with integrated healthcare solutions.
                             </div>
                         </div>
@@ -872,7 +1082,7 @@
             </div>
              </div>
               <div class="col-md-6">
-                 <div class="right-panel">
+                 <div class="right-panel desktop-tabs-view">
                 <div class="solution_right_img">
                     <img src="assets/images/solution_img.png" class="img-fluid" alt="Modern manufacturing facility with automated production line">
                 </div>
@@ -987,7 +1197,7 @@
               <p>Dynamics 365 Business central Implementation should be planned and executed carefully. We have a developed and proven approach to make sure that your implementation at Veelead is seamless, cost effective, and business aligned.</p>
           </div>
 
-           <div class="process-container">
+           <div class="process-container desktop-tabs-view">
         <div class="process-grid">
             <!-- Step 1 -->
             <div class="step-card">
@@ -1068,6 +1278,172 @@
                 <h3 class="step-title">Go-Live & Support</h3>
                 <p class="step-description">Launch and provide ongoing assistance</p>
             </div>
+        </div>
+    </div>
+
+       <div class="process-accordion-container mobile-accordion-view">
+        <div class="accordion process_accordion" id="processAccordion">
+            
+            <!-- Step 1: Discovery & Assessment -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep1">
+                        <span class="accordion-step-number">1</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <span class="accordion-step-title">Discovery & Assessment</span>
+                    </button>
+                </h2>
+                <div id="processStep1" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Understand your business needs and goals</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Planning & Design -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep2">
+                        <span class="accordion-step-number">2</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <span class="accordion-step-title">Planning & Design</span>
+                    </button>
+                </h2>
+                <div id="processStep2" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Create detailed implementation roadmap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Configuration & Setup -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep3">
+                        <span class="accordion-step-number">3</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <span class="accordion-step-title">Configuration & Setup</span>
+                    </button>
+                </h2>
+                <div id="processStep3" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Configure BC to match your workflows</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Data Migration -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep4">
+                        <span class="accordion-step-number">4</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <span class="accordion-step-title">Data Migration</span>
+                    </button>
+                </h2>
+                <div id="processStep4" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Securely transfer data from legacy systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Integration -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep5">
+                        <span class="accordion-step-number">5</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <span class="accordion-step-title">Integration</span>
+                    </button>
+                </h2>
+                <div id="processStep5" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Connect with existing tools and platforms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Testing & Validation -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep6">
+                        <span class="accordion-step-number">6</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <span class="accordion-step-title">Testing & Validation</span>
+                    </button>
+                </h2>
+                <div id="processStep6" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Ensure system works perfectly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7: User Training -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep7">
+                        <span class="accordion-step-number">7</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <span class="accordion-step-title">User Training</span>
+                    </button>
+                </h2>
+                <div id="processStep7" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Empower your team with knowledge</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8: Go-Live & Support -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#processStep8">
+                        <span class="accordion-step-number">8</span>
+                        <div class="accordion-icon-box">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <span class="accordion-step-title">Go-Live & Support</span>
+                    </button>
+                </h2>
+                <div id="processStep8" class="accordion-collapse collapse" data-bs-parent="#processAccordion">
+                    <div class="accordion-body">
+                        <div class="accordion-step-content">
+                            <p class="accordion-step-description">Launch and provide ongoing assistance</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -1223,6 +1599,8 @@
               <h3>AI Capabilities of Dynamics 365 Business Central</h3>
              <p>The way business is conducted is being transformed by Artificial Intelligence. With Dynamics 365 Business Central Services, it is no longer an additional option, it is now an inseparable part of your ERP. This gives your business the ability to predict trends, respond faster and deliver results that would have never been realized by traditional systems.</p>
           </div>
+
+          <div class="desktop-tabs-view">
              <div class="nav-container">
         <div class="container-fluid px-4">
             <ul class="nav nav-tabs ai_tabs" role="tablist">
@@ -1350,6 +1728,123 @@
         </div>
       
     </div>
+          </div>
+
+
+
+
+
+
+
+
+
+<div class="ai-accordion-container mobile-accordion-view">
+  <div class="accordion ai_accordion" id="aiAccordion">
+
+    <!-- 1. Predictive Forecasting -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiPredictive">
+          <div class="ai-icon-box">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <span class="ai-feature-title">Predictive Forecasting</span>
+        </button>
+      </h2>
+      <div id="aiPredictive" class="accordion-collapse collapse" data-bs-parent="#aiAccordion">
+        <div class="accordion-body">
+          <p class="ai-content-description">
+            Leverage AI-powered analytics to predict future trends, optimize inventory levels, and make proactive business decisions with confidence.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Cash Flow Management -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiCashflow">
+          <div class="ai-icon-box">
+            <i class="fas fa-dollar-sign"></i>
+          </div>
+          <span class="ai-feature-title">Cash Flow Management</span>
+        </button>
+      </h2>
+      <div id="aiCashflow" class="accordion-collapse collapse" data-bs-parent="#aiAccordion">
+        <div class="accordion-body">
+          <p class="ai-content-description">
+            Monitor and optimize your cash flow in real-time with AI-driven insights that help maintain healthy financial operations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Smart Inventory -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiInventory">
+          <div class="ai-icon-box">
+            <i class="fas fa-box"></i>
+          </div>
+          <span class="ai-feature-title">Smart Inventory</span>
+        </button>
+      </h2>
+      <div id="aiInventory" class="accordion-collapse collapse" data-bs-parent="#aiAccordion">
+        <div class="accordion-body">
+          <p class="ai-content-description">
+            Automate inventory management with intelligent forecasting, reduce stockouts, and optimize warehouse operations efficiently.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Data-Driven Insights -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aiInsights">
+          <div class="ai-icon-box">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <span class="ai-feature-title">Data-Driven Insights</span>
+        </button>
+      </h2>
+      <div id="aiInsights" class="accordion-collapse collapse show" data-bs-parent="#aiAccordion">
+        <div class="accordion-body">
+          <p class="ai-content-description">
+            Business Central's AI delivers actionable insights through natural language queries, interactive dashboards, and automated reporting, empowering data-driven strategic decisions.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Workflow Automation -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aiWorkflow">
+          <div class="ai-icon-box">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <span class="ai-feature-title">Workflow Automation</span>
+        </button>
+      </h2>
+      <div id="aiWorkflow" class="accordion-collapse collapse" data-bs-parent="#aiAccordion">
+        <div class="accordion-body">
+          <p class="ai-content-description">
+            Streamline repetitive tasks and automate complex workflows with AI-powered automation, boosting productivity and reducing errors.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
 
 
          </div>
@@ -1365,9 +1860,9 @@
       <div class="row">
          <div class="col-md-12">
            <div class="title">
-              <h2 >Success Stories: <span>Real Results </span>from Real Clients </h2>
-              <h3>Industry-Focused Solutions</h3>
-              <p>No matter your industry, Veelead ensures Dynamics 365 Business Central works the way you need it to.</p>
+              
+              <h3>Success Stories: <span>Real Results </span>from Real Clients</h3>
+              <p class="w-75">Discover how businesses across industries have transformed their operations with our Dynamics 365 Business Central solutions.</p>
           </div>
           <div class="container case-study-section">
     <div class="owl-carousel owl-theme success-carousel">

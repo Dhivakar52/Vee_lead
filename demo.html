@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation Services - Responsive</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .services-main-container {
+            max-width: 1252px;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid #0066cc;
+            position: relative;
+        }
+
+        /* Desktop Tabs - Show on large screens */
+        .desktop-tabs-view {
+            display: block;
+        }
+
+        .mobile-accordion-view {
+            display: none;
+        }
+
+        /* Bootstrap Nav Tabs Customization */
+        .service_tabs {
+            border: none;
+            border-bottom: 3px dotted #0066cc;
+            background: white;
+            flex-wrap: wrap;
+        }
+
+        .service_tabs .nav-item {
+            flex: 1;
+            min-width: 110px;
+        }
+
+        .service_tabs .nav-link {
+            border: none;
+            border-radius: 0;
+            color: #666;
+            background: #f8f9fa;
+            padding: 12px 15px;
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+
+        .service_tabs .nav-link:hover {
+            background: #e9ecef;
+            color: #0066cc;
+            border: none;
+        }
+
+        .service_tabs .nav-link.active {
+            background: #ff6600;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+
+        /* Content section */
+        .tab-content {
+            border: none;
+        }
+
+        .content-section {
+            min-height: 320px;
+        }
+
+        .left-content {
+            background: #003d7a;
+            padding: 40px 50px;
+            color: white;
+            height: 100%;
+        }
+
+        .left-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .left-content .description {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: #ff6600;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-icon::after {
+            content: '✓';
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .feature-text {
+            color: white;
+            line-height: 1.6;
+        }
+
+        .right-content {
+            background: linear-gradient(135deg, #001a33 0%, #003d7a 100%);
+            height: 100%;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .right-content img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Mobile Accordion Styles */
+        .service_accordion {
+            border: none;
+        }
+
+        .service_accordion .accordion-item {
+            border: none;
+            border-bottom: 1px solid #e0e0e0;
+            background: white;
+        }
+
+        .service_accordion .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .service_accordion .accordion-button {
+            background: white;
+            color: #333;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 18px 20px;
+            box-shadow: none;
+            border: none;
+        }
+
+        .service_accordion .accordion-button:not(.collapsed) {
+            background: #fff3e6;
+            color: #ff6600;
+            font-weight: 600;
+            box-shadow: none;
+        }
+
+        .service_accordion .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .service_accordion .accordion-button::after {
+            content: '+';
+            background-image: none;
+            width: auto;
+            height: auto;
+            font-size: 24px;
+            font-weight: 300;
+            color: #ff6600;
+        }
+
+        .service_accordion .accordion-button:not(.collapsed)::after {
+            content: '−';
+            transform: none;
+        }
+
+        .service_accordion .accordion-body {
+            padding: 0;
+        }
+
+        .service_accordion .accordion-content-wrapper {
+            background: #003d7a;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .service_accordion .accordion-content-wrapper h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .service_accordion .accordion-content-wrapper p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .desktop-tabs-view {
+                display: none;
+            }
+
+            .mobile-accordion-view {
+                display: block;
+            }
+
+            .services-main-container {
+                border: none;
+            }
+
+            body {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service_accordion .accordion-button {
+                font-size: 14px;
+                padding: 15px 18px;
+            }
+
+            .service_accordion .accordion-content-wrapper {
+                padding: 25px 18px;
+            }
+
+            .service_accordion .accordion-content-wrapper h3 {
+                font-size: 1.2rem;
+            }
+
+            .service_accordion .accordion-content-wrapper p {
+                font-size: 0.9rem;
+            }
+
+            .feature-item {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service_accordion .accordion-button {
+                font-size: 13px;
+                padding: 14px 16px;
+            }
+
+            .service_accordion .accordion-content-wrapper {
+                padding: 20px 15px;
+            }
+
+            .service_accordion .accordion-content-wrapper h3 {
+                font-size: 1.1rem;
+            }
+
+            .feature-icon {
+                width: 20px;
+                height: 20px;
+                margin-right: 12px;
+            }
+
+            .feature-icon::after {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="services-main-container">
+        
+        <!-- Desktop View - Tabs (Show on large screens) -->
+        <div class="desktop-tabs-view">
+            <!-- Service Tabs -->
+            <ul class="service_tabs nav nav-tabs" id="servicesTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="implementation-tab" data-bs-toggle="tab" data-bs-target="#implementation" type="button" role="tab">
+                        Implementation
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="upgrade-tab" data-bs-toggle="tab" data-bs-target="#upgrade" type="button" role="tab">
+                        Upgrade
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="support-tab" data-bs-toggle="tab" data-bs-target="#support" type="button" role="tab">
+                        Support
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="development-tab" data-bs-toggle="tab" data-bs-target="#development" type="button" role="tab">
+                        Development
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="migration-tab" data-bs-toggle="tab" data-bs-target="#migration" type="button" role="tab">
+                        Migration
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="integration-tab" data-bs-toggle="tab" data-bs-target="#integration" type="button" role="tab">
+                        Integration
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="application-tab" data-bs-toggle="tab" data-bs-target="#application" type="button" role="tab">
+                        Application
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reporting-tab" data-bs-toggle="tab" data-bs-target="#reporting" type="button" role="tab">
+                        Reporting
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="customization-tab" data-bs-toggle="tab" data-bs-target="#customization" type="button" role="tab">
+                        Customization
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="servicesTabContent">
+                <div class="tab-pane fade show active" id="implementation" role="tabpanel">
+                    <div class="content-section">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="left-content">
+                                    <h2>Implementation Services</h2>
+                                    <p class="description">
+                                        We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                                    </p>
+                                    <ul class="features-list">
+                                        <li class="feature-item">
+                                            <div class="feature-icon"></div>
+                                            <span class="feature-text">Structured business analysis and planning phase</span>
+                                        </li>
+                                        <li class="feature-item">
+                                            <div class="feature-icon"></div>
+                                            <span class="feature-text">Systematic deployment with minimal disruption</span>
+                                        </li>
+                                        <li class="feature-item">
+                                            <div class="feature-icon"></div>
+                                            <span class="feature-text">Comprehensive user training programs</span>
+                                        </li>
+                                        <li class="feature-item">
+                                            <div class="feature-icon"></div>
+                                            <span class="feature-text">Faster go-live with proven methodologies</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="right-content">
+                                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23003d7a' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white' opacity='0.3'%3EImplementation%3C/text%3E%3C/svg%3E" class="img-fluid" alt="Implementation">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Tabs (Upgrade, Support, etc.) with same structure -->
+                <div class="tab-pane fade" id="upgrade" role="tabpanel">
+                    <div class="content-section">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="left-content">
+                                    <h2>Upgrade Services</h2>
+                                    <p class="description">Seamless migration to the latest version with minimal downtime and maximum efficiency.</p>
+                                    <ul class="features-list">
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Version assessment and planning</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Data migration and testing</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Smooth transition process</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Post-upgrade support</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4"><div class="right-content"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23003d7a' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white' opacity='0.3'%3EUpgrade%3C/text%3E%3C/svg%3E" class="img-fluid" alt="Upgrade"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="support" role="tabpanel">
+                    <div class="content-section">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="left-content">
+                                    <h2>Support Services</h2>
+                                    <p class="description">24/7 expert support to keep your business running smoothly.</p>
+                                    <ul class="features-list">
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Round-the-clock availability</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Quick issue resolution</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Proactive monitoring</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Regular system health checks</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4"><div class="right-content"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23003d7a' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white' opacity='0.3'%3ESupport%3C/text%3E%3C/svg%3E" class="img-fluid" alt="Support"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add remaining tabs similarly -->
+                <div class="tab-pane fade" id="development" role="tabpanel">
+                    <div class="content-section">
+                        <div class="row g-0">
+                            <div class="col-md-8">
+                                <div class="left-content">
+                                    <h2>Development Services</h2>
+                                    <p class="description">Custom development solutions tailored to your unique business requirements.</p>
+                                    <ul class="features-list">
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom module development</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">API integration</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Workflow automation</span></li>
+                                        <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Quality assurance testing</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-4"><div class="right-content"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23003d7a' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='white' opacity='0.3'%3EDevelopment%3C/text%3E%3C/svg%3E" class="img-fluid" alt="Development"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile View - Accordion (Show on small screens) -->
+        <div class="mobile-accordion-view">
+            <div class="accordion service_accordion" id="servicesAccordion">
+                
+                <!-- Implementation -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#accordionImplementation">
+                            Implementation
+                        </button>
+                    </h2>
+                    <div id="accordionImplementation" class="accordion-collapse collapse show" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Implementation Services</h3>
+                                <p>We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Structured business analysis and planning phase</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Systematic deployment with minimal disruption</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Comprehensive user training programs</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Faster go-live with proven methodologies</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upgrade -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionUpgrade">
+                            Upgrade
+                        </button>
+                    </h2>
+                    <div id="accordionUpgrade" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Upgrade Services</h3>
+                                <p>Seamless migration to the latest version with minimal downtime and maximum efficiency.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Version assessment and planning</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Data migration and testing</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionSupport">
+                            Support
+                        </button>
+                    </h2>
+                    <div id="accordionSupport" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Support Services</h3>
+                                <p>24/7 expert support to keep your business running smoothly.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Round-the-clock availability</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Quick issue resolution</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionDevelopment">
+                            Development
+                        </button>
+                    </h2>
+                    <div id="accordionDevelopment" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Development Services</h3>
+                                <p>Custom development solutions tailored to your unique business requirements.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom module development</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">API integration</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Migration -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionMigration">
+                            Migration
+                        </button>
+                    </h2>
+                    <div id="accordionMigration" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Migration Services</h3>
+                                <p>Smooth data migration from legacy systems to Business Central.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Data assessment and mapping</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Secure data transfer</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integration -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionIntegration">
+                            Integration
+                        </button>
+                    </h2>
+                    <div id="accordionIntegration" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Integration Services</h3>
+                                <p>Connect Business Central with your existing tools and platforms.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Third-party integrations</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">API development</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionApplication">
+                            Application
+                        </button>
+                    </h2>
+                    <div id="accordionApplication" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Application Services</h3>
+                                <p>Custom application development for Business Central.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom app development</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Extension configuration</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reporting -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionReporting">
+                            Reporting
+                        </button>
+                    </h2>
+                    <div id="accordionReporting" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Reporting Services</h3>
+                                <p>Advanced reporting and analytics solutions.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Custom report development</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Power BI integration</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customization -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCustomization">
+                            Customization
+                        </button>
+                    </h2>
+                    <div id="accordionCustomization" class="accordion-collapse collapse" data-bs-parent="#servicesAccordion">
+                        <div class="accordion-body">
+                            <div class="accordion-content-wrapper">
+                                <h3>Customization Services</h3>
+                                <p>Tailor Business Central to fit your exact business needs.</p>
+                                <ul class="features-list">
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">UI/UX customization</span></li>
+                                    <li class="feature-item"><div class="feature-icon"></div><span class="feature-text">Workflow modifications</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

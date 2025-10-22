@@ -1,365 +1,1068 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementation Process</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- IE Edge Meta Tag -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>SRM </title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            padding: 40px 20px;
-        }
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/fonts/font-awesome-4.7.0/css/font-awesome.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+     <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-        .process-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #f9f9f9;
-            padding: 40px;
-            border: 3px dotted #0066cc;
-            position: relative;
-        }
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
+  <body>
 
-        .steps-wrapper {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 0;
-            position: relative;
-        }
 
-        .process-step {
-            background: white;
-            border: 2px solid #ffb380;
-            padding: 30px 25px;
-            position: relative;
-            min-height: 220px;
-            display: flex;
-            flex-direction: column;
-        }
+   <div class="topbar-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="topbar-info">
+                    <a href="#" class="topbar-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@veelead.com</span>
+                    </a>
+                    <a href="#" class="topbar-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sales@veelead.com</span>
+                    </a>
+                    <a href="#" class="topbar-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 732 782 1890</span>
+                    </a>
+                </div>
+                <div class="topbar-social">
+                    <span>Follow Us :</span>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        /* Grid positioning */
-        .step-1 {
-            grid-column: 1;
-            grid-row: 1;
-        }
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/footer_logo.png" class="img-fluid" alt="">
+    </a>
 
-        .step-2 {
-            grid-column: 2;
-            grid-row: 1;
-        }
+    <!-- Hamburger button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        .step-3 {
-            grid-column: 3;
-            grid-row: 1;
-        }
+    <!-- Menu items -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav menu_space mb-2 mb-lg-0">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Company</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Solutions</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Case Studies</a></li>
+      </ul>
 
-        .step-4 {
-            grid-column: 4;
-            grid-row: 1;
-        }
+      <!-- Right side actions -->
+      <div class="d-flex align-items-center gap-2">
+        <a href="#" class="nav-link d-none d-md-inline">Contact Us</a>
+        <button class="btn btn-outline-secondary"><i class="fas fa-search"></i></button>
+        <a href="#" class="btn btn-primary btn-blue">
+          Get a Quote <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-        .step-5 {
-            grid-column: 1;
-            grid-row: 2;
-        }
 
-        .step-6 {
-            grid-column: 2;
-            grid-row: 2;
-        }
+    <!-- Hero Section -->
+    <section class="hero-main-section">
+        <div class="container">
+            <div class="row hero-content-wrapper">
+                <div class="col-lg-7">
+                    <div class="breadcrumb-custom">
+                        <a href="#">Services</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Dynamics 365 Business Central</span>
+                    </div>
 
-        .step-7 {
-            grid-column: 3;
-            grid-row: 2;
-        }
+                    <div class="hero-headline">
+                        <h1>
+                            We help you<br>
+                            <span class="highlight-text">make smarter decisions</span>
+                            <span class="bold-text">with Dynamics 365 Business Central.</span>
+                        </h1>
+                    </div>
 
-        .step-8 {
-            grid-column: 4;
-            grid-row: 2;
-        }
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Customer Satisfaction</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Successful Projects</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Expert Support</span>
+                        </div>
+                    </div>
 
-        .step-number {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #ffd4b3;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
+                    <button class="hero-cta-btn">Talk to an Expert</button>
+                </div>
 
-        .step-icon-box {
-            width: 50px;
-            height: 50px;
-            background: #fff3e6;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+                <div class="col-lg-5">
+                    <div class="hero-visual-area">
+                       <div>
+                        <img src="assets/images/hero_right_img.png" class="img-fluid" alt="Hero Image">
+                       </div>
 
-        .step-icon-box i {
-            font-size: 22px;
-            color: #ff8533;
-        }
+                        <div class="certification-badges">
+                            <div class="badge-card">
+                                <div class="microsoft-logo">
+                                    <div class="ms-squares">
+                                        <div class="ms-square ms-red"></div>
+                                        <div class="ms-square ms-green"></div>
+                                        <div class="ms-square ms-blue"></div>
+                                        <div class="ms-square ms-yellow"></div>
+                                    </div>
+                                    <span class="ms-text">Microsoft</span>
+                                </div>
+                                <div class="badge-type">Solutions Partner</div>
+                                <div class="badge-title">Business Applications</div>
+                            </div>
 
-        .step-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
+                            <div class="badge-card">
+                                <div class="microsoft-logo">
+                                    <div class="ms-squares">
+                                        <div class="ms-square ms-red"></div>
+                                        <div class="ms-square ms-green"></div>
+                                        <div class="ms-square ms-blue"></div>
+                                        <div class="ms-square ms-yellow"></div>
+                                    </div>
+                                    <span class="ms-text">Microsoft</span>
+                                </div>
+                                <div class="badge-type">Solutions Partner</div>
+                                <div class="badge-title">Business Central<br>Inner Circle</div>
+                            </div>
+                        </div>
 
-        .step-description {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.5;
-            margin-top: auto;
-        }
+                        <div class="certification-footer">
+                            <p>Microsoft Certified Partner</p>
+                            <p>Industry-leading certifications & expertise</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .steps-wrapper {
-                grid-template-columns: repeat(4, 1fr);
-            }
 
-            .process-step {
-                padding: 25px 20px;
-                min-height: 200px;
-            }
 
-            .step-number {
-                font-size: 2.2rem;
-            }
 
-            .step-title {
-                font-size: 1rem;
-            }
 
-            .step-description {
-                font-size: 0.85rem;
-            }
-        }
 
-        @media (max-width: 992px) {
-            .steps-wrapper {
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(4, 1fr);
-            }
 
-            .step-1 {
-                grid-column: 1;
-                grid-row: 1;
-            }
 
-            .step-2 {
-                grid-column: 2;
-                grid-row: 1;
-            }
 
-            .step-3 {
-                grid-column: 1;
-                grid-row: 2;
-            }
 
-            .step-4 {
-                grid-column: 2;
-                grid-row: 2;
-            }
 
-            .step-5 {
-                grid-column: 1;
-                grid-row: 3;
-            }
 
-            .step-6 {
-                grid-column: 2;
-                grid-row: 3;
-            }
 
-            .step-7 {
-                grid-column: 1;
-                grid-row: 4;
-            }
 
-            .step-8 {
-                grid-column: 2;
-                grid-row: 4;
-            }
 
-            .process-step {
-                min-height: 180px;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .process-container {
-                padding: 25px 20px;
-            }
 
-            .steps-wrapper {
-                grid-template-columns: 1fr;
-                grid-template-rows: auto;
-            }
 
-            .step-1, .step-2, .step-3, .step-4,
-            .step-5, .step-6, .step-7, .step-8 {
-                grid-column: 1;
-                grid-row: auto;
-            }
 
-            .process-step {
-                min-height: auto;
-                padding: 20px;
-            }
 
-            .step-number {
-                font-size: 2rem;
-                margin-bottom: 10px;
-            }
 
-            .step-icon-box {
-                width: 45px;
-                height: 45px;
-                margin-bottom: 15px;
-            }
 
-            .step-icon-box i {
-                font-size: 20px;
-            }
 
-            .step-title {
-                font-size: 0.95rem;
-                margin-bottom: 10px;
-            }
 
-            .step-description {
-                font-size: 0.85rem;
-            }
-        }
 
-        @media (max-width: 576px) {
-            body {
-                padding: 20px 10px;
-            }
 
-            .process-container {
-                padding: 20px 15px;
-            }
+<!-- Second Section -->
 
-            .process-step {
-                padding: 18px 15px;
-            }
+<section class="mb_30">
+<div class="container">
+    <div class="row">
+       <div class="col-md-12">
+          <div class="title">
+              <h2 >Overview</h2>
+              <h3>Dynamics 365 Business Central</h3>
+          </div>
+          <div class="row align-items-center">
+             <div class="col-md-8">
+              <div class="questionTitle mb-3">
+                 <p> <span >What?</span> <br>
+                Microsoft Dynamics 365 Business Central is an all-in-one ERP designed for small to mid-sized businesses to simplify operations, enhance financial insights, and accelerate growth. It unifies finance, supply chain, sales, service, and project management into a single system with powerful automation, real-time analytics, and seamless Microsoft 365 integration.
+              </p>
+              </div>
+               <div class="questionTitle">
+                 <p> <span >Why?</span> <br>
+               Modern businesses need more than just an ERP—they need an integrated solution connecting finance, sales, supply chain, and operations. VeeLead provides end-to-end Dynamics 365 Business Central services to help you streamline operations, improve efficiency, and adapt to market dynamics with confidence.
+              </p>
+              </div>
+               
+             </div>
+             <div class="col-md-4">
+               <div class="overview_side_img">
+                <img src="assets/images/over_view.png" class="img-fluid" alt="">   
+               </div>
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
 
-            .step-number {
-                font-size: 1.8rem;
-            }
+   
+</section>
 
-            .step-icon-box {
-                width: 42px;
-                height: 42px;
-            }
 
-            .step-icon-box i {
-                font-size: 18px;
-            }
 
-            .step-title {
-                font-size: 0.9rem;
-            }
 
-            .step-description {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="process-container">
-        <div class="steps-wrapper">
+
+
+
+<!-- Third Section -->
+ <section class="mb_30 benefit_bg">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+         <div class="title">
+            <h3>Benefits of the Dynamics 365 Business Central Services</h3>
+            <p>All thriving companies have to deal with such issues as disjointed systems, inadequate insights, and inefficiencies in the way they perform. By using Dynamics 365 Business Central Services, you will be able to break these obstacles and open up new possibilities of growth.</p>
+        </div>
+           <div class="benefits-grid">
+
+          <div class="row">
+             <div class="col-md-4">
+              <div class="benefit-card">
+                <div class="icon-wrapper icon-blue">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3>Unified Business Processes</h3>
+                <p>Control finance, sales, operations and supply chain.</p>
+                <div class="accent-bar"></div>
+            </div>
+             </div>
+             <div class="col-md-4">
+              <div class="benefit-card">
+                <div class="icon-wrapper icon-yellow">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Rapid ROI</h3>
+                <p>Rapid implementation and efficient processes provide you with results at an expedited rate.</p>
+                <div class="accent-bar"></div>
+            </div>
+             </div>
+             <div class="col-md-4">
+               <div class="benefit-card">
+                <div class="icon-wrapper icon-green">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Data-Driven Growth</h3>
+                <p>Be smarter with AI-driven reporting and dashboards.</p>
+                <div class="accent-bar"></div>
+            </div>
+             </div>
+             <div class="col-md-4">
+               <div class="benefit-card">
+                <div class="icon-wrapper icon-purple">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <h3>Reduced Operation Costs</h3>
+                <p>Get rid of unnecessary systems and minimize IT overhead.</p>
+                <div class="accent-bar"></div>
+            </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="benefit-card">
+                <div class="icon-wrapper icon-pink">
+                    <i class="fas fa-arrow-trend-up"></i>
+                </div>
+                <h3>Scalable Solutions</h3>
+                <p>Expand with new features, users and modules as your business expands.</p>
+                <div class="accent-bar"></div>
+            </div>
+             </div>
+             <div class="col-md-4">
+              <div class="benefit-card">
+                <div class="icon-wrapper icon-indigo">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3>Improved Compliance</h3>
+                <p>Intrinsic regulatory and financial compliance controls can be used to guarantee precision and control.</p>
+                <div class="accent-bar"></div>
+            </div>
+             </div>
+          </div>       
+        </div>
+         </div>
+      </div>
+   </div>
+ </section>
+
+<!-- Third Section -->
+
+
+<!-- Fourth Section -->
+<section class="mb_30">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">
+              <h2 >Our Services</h2>
+              <h3>Dynamics 365 Business Central Services</h3>
+              <p>Our gold standard Business Central development services help businesses customize, extend, and optimize their ERP for seamless operations. Whether it's custom module development, API integrations, or workflow automation, we enable businesses to adapt, scale, and enhance efficiency with tailored solutions. From SMBs to large enterprises, we ensure your Business Central implementation aligns with your unique business processes and growth strategy.</p>
+          </div>
+
+              <div class="main-container">
+       
+        
+        <!-- Service  Tabs -->
+        <ul class="service_tabs nav nav-tabs" id="servicesTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="implementation-tab" data-bs-toggle="tab" data-bs-target="#implementation" type="button" role="tab" aria-controls="implementation" aria-selected="true">
+                    Implementation
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="upgrade-tab" data-bs-toggle="tab" data-bs-target="#upgrade" type="button" role="tab" aria-controls="upgrade" aria-selected="false">
+                    Upgrade
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="support-tab" data-bs-toggle="tab" data-bs-target="#support" type="button" role="tab" aria-controls="support" aria-selected="false">
+                    Support
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="development-tab" data-bs-toggle="tab" data-bs-target="#development" type="button" role="tab" aria-controls="development" aria-selected="false">
+                    Development
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="migration-tab" data-bs-toggle="tab" data-bs-target="#migration" type="button" role="tab" aria-controls="migration" aria-selected="false">
+                    Migration
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="integration-tab" data-bs-toggle="tab" data-bs-target="#integration" type="button" role="tab" aria-controls="integration" aria-selected="false">
+                    Integration
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="application-tab" data-bs-toggle="tab" data-bs-target="#application" type="button" role="tab" aria-controls="application" aria-selected="false">
+                    Application
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="reporting-tab" data-bs-toggle="tab" data-bs-target="#reporting" type="button" role="tab" aria-controls="reporting" aria-selected="false">
+                    Reporting
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="customization-tab" data-bs-toggle="tab" data-bs-target="#customization" type="button" role="tab" aria-controls="customization" aria-selected="false">
+                    Customization
+                </button>
+            </li>
+        </ul>
+
+        <!-- Service Tab Content -->
+        <div class="tab-content" id="servicesTabContent">
+            
+            <div class="tab-pane fade show active" id="implementation" role="tabpanel" aria-labelledby="implementation-tab">
+                <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+          
+            <div class="tab-pane fade" id="upgrade" role="tabpanel" aria-labelledby="upgrade-tab">
+                <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="support" role="tabpanel" aria-labelledby="support-tab">
+               <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="development" role="tabpanel" aria-labelledby="development-tab">
+                <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="migration" role="tabpanel" aria-labelledby="migration-tab">
+               <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="integration" role="tabpanel" aria-labelledby="integration-tab">
+                <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="application" role="tabpanel" aria-labelledby="application-tab">
+               <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="reporting" role="tabpanel" aria-labelledby="reporting-tab">
+               <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="customization" role="tabpanel" aria-labelledby="customization-tab">
+                <div class="content-section">
+                   <div class="row">
+                     <div class="col-md-8 pe-0">
+                           <div class="left-content">
+                        <h2>Implementation Services</h2>
+                        <p class="description">
+                            We are systematic, starting with business analysis and planning, and proceeding on the deployment and training of the system. This guarantees a faster go live and few disruptions.
+                        </p>
+                        <ul class="features-list">
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Structured business analysis and planning phase</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Systematic deployment with minimal disruption</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Comprehensive user training programs</span>
+                            </li>
+                            <li class="feature-item">
+                                <div class="feature-icon"></div>
+                                <span class="feature-text">Faster go-live with proven methodologies</span>
+                            </li>
+                        </ul>
+                    </div>
+                     </div>
+                     <div class="col-md-4 ps-0">
+                           <div class="right-content">
+                          <img src="assets/images/service_1.png" class="img-fluid" alt="">
+                    </div>
+                     </div>
+                   </div>
+                   
+
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+     </div>
+      </div>
+  </div>
+</section>
+
+<!-- Fourth Section -->
+
+<!-- Fifth Section -->
+
+<section class="mb_30">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">
+              <h2 >Our Solutions</h2>
+              <h3>Industry-Focused Solutions</h3>
+              <p>No matter your industry, Veelead ensures Dynamics 365 Business Central works the way you need it to.</p>
+          </div>
+
+            <div class="main-container">
+           <div class="row align-items-end" >
+             <div class="col-md-6">
+              <div class="">
+                <div class="accordion" id="industryAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                Manufacturing
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#industryAccordion">
+                            <div class="accordion-body">
+                                Automatize processes, utilize resources to the fullest and reduce downtimes.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                Retail & eCommerce
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
+                            <div class="accordion-body">
+                                Streamline operations, enhance customer experience, and integrate online and offline channels seamlessly.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                Distribution and Supply Chain
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
+                            <div class="accordion-body">
+                                Optimize inventory management, improve logistics efficiency, and gain real-time visibility across your supply chain.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                                Professional Services
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
+                            <div class="accordion-body">
+                                Manage projects effectively, track time and resources, and deliver exceptional client services with streamlined operations.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+                                Finance & Accounting
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
+                            <div class="accordion-body">
+                                Automate financial processes, ensure compliance, and gain real-time insights into your financial performance.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+                                Healthcare & Life Sciences
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#industryAccordion">
+                            <div class="accordion-body">
+                                Manage patient care, ensure regulatory compliance, and optimize operations with integrated healthcare solutions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             </div>
+              <div class="col-md-6">
+                 <div class="right-panel">
+                <div class="solution_right_img">
+                    <img src="assets/images/solution_img.png" class="img-fluid" alt="Modern manufacturing facility with automated production line">
+                </div>
+            </div>
+              </div>
+           </div>
+        
+        <div class="content-wrapper">
+            
+            
+           
+        </div>
+    </div>
+
+
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Fifth Section -->
+
+
+
+
+<!-- Sixth Section -->
+<section class="mb_30">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">
+              <h2 >Partner</h2>
+              <h3>Why Choose VeeLead as Your Business Central Partner</h3>
+              <p>Your ERP transformation will not only be successful with the technology itself, but also with the partner who will take you through the process. We do not just implement but offer customized solutions, strategic guidance, and ongoing service, so that you can realize quantifiable business results. Some of the reasons why businesses trust Veelead.</p>
+          </div>
+           <div class="features-container">
+        <div class="row g-3">
+            <div class="col-12 col-md-6 col-lg-4 col-xl">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="feature-title">Experienced in the Industry</h3>
+                    <p class="feature-description">
+                        Our consultants bring years of proven success in implementing ERP projects, with deep expertise across industries like manufacturing, retail, finance, and distribution.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4 col-xl">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="feature-title">Custom Solutions</h3>
+                    <p class="feature-description">
+                        We do not think that it is one size fits all. We tailor Dynamics 365 Business Central to your individual workflows, compliance needs, and expansion strategies.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4 col-xl">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">Dedicated Support Team</h3>
+                    <p class="feature-description">
+                        Our professionals are round the clock to observe, troubleshoot and fix problems to reduce downtimes and interruptions.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4 col-xl">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="feature-title">End-to-End Services</h3>
+                    <p class="feature-description">
+                        Starting with licensing and implementation up to upgrades, support, and reporting, we take care of each Business Central lifecycle.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-6 col-lg-4 col-xl">
+                <div class="feature-card">
+                    <div class="icon-wrapper">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Long-Term Partnership</h3>
+                    <p class="feature-description">
+                        We do not come in and walk off, we keep on upgrading your ERP solution in accordance with the business needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Sixth Section -->
+
+<!-- Seventh Section -->
+<section class="mb_80">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">       
+              <h3>Implementation Process of Dynamics 365 Business Central Services</h3>
+              <p>Dynamics 365 Business central Implementation should be planned and executed carefully. We have a developed and proven approach to make sure that your implementation at Veelead is seamless, cost effective, and business aligned.</p>
+          </div>
+
+           <div class="process-container">
+        <div class="process-grid">
             <!-- Step 1 -->
-            <div class="process-step step-1">
+            <div class="step-card">
                 <div class="step-number">1</div>
-                <div class="step-icon-box">
+                <div class="icon-box icon-box_migration">
                     <i class="fas fa-search"></i>
                 </div>
                 <h3 class="step-title">Discovery & Assessment</h3>
                 <p class="step-description">Understand your business needs and goals</p>
             </div>
-
+            
             <!-- Step 2 -->
-            <div class="process-step step-2">
+            <div class="step-card">
                 <div class="step-number">2</div>
-                <div class="step-icon-box">
-                    <i class="fas fa-file-alt"></i>
+                <div class="icon-box icon-box_migration">
+                    <i class="fas fa-clipboard-list"></i>
                 </div>
                 <h3 class="step-title">Planning & Design</h3>
                 <p class="step-description">Create detailed implementation roadmap</p>
             </div>
-
+            
             <!-- Step 3 -->
-            <div class="process-step step-3">
+            <div class="step-card">
                 <div class="step-number">3</div>
-                <div class="step-icon-box">
-                    <i class="fas fa-cog"></i>
+                <div class="icon-box icon-box_migration">
+                    <i class="fas fa-cogs"></i>
                 </div>
                 <h3 class="step-title">Configuration & Setup</h3>
                 <p class="step-description">Configure BC to match your workflows</p>
             </div>
-
+            
             <!-- Step 4 -->
-            <div class="process-step step-4">
+            <div class="step-card">
                 <div class="step-number">4</div>
-                <div class="step-icon-box">
+                <div class="icon-box icon-box_migration">
                     <i class="fas fa-database"></i>
                 </div>
                 <h3 class="step-title">Data Migration</h3>
                 <p class="step-description">Securely transfer data from legacy systems</p>
             </div>
-
+            
             <!-- Step 5 -->
-            <div class="process-step step-5">
+            <div class="step-card">
                 <div class="step-number">5</div>
-                <div class="step-icon-box">
+                <div class="icon-box icon-box_migration">
                     <i class="fas fa-link"></i>
                 </div>
                 <h3 class="step-title">Integration</h3>
                 <p class="step-description">Connect with existing tools and platforms</p>
             </div>
-
+            
             <!-- Step 6 -->
-            <div class="process-step step-6">
+            <div class="step-card">
                 <div class="step-number">6</div>
-                <div class="step-icon-box">
-                    <i class="fas fa-vial"></i>
+                <div class="icon-box icon-box_migration">
+                    <i class="fas fa-check-circle"></i>
                 </div>
                 <h3 class="step-title">Testing & Validation</h3>
                 <p class="step-description">Ensure system works perfectly</p>
             </div>
-
+            
             <!-- Step 7 -->
-            <div class="process-step step-7">
+            <div class="step-card">
                 <div class="step-number">7</div>
-                <div class="step-icon-box">
+                <div class="icon-box icon-box_migration">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <h3 class="step-title">User Training</h3>
                 <p class="step-description">Empower your team with knowledge</p>
             </div>
-
+            
             <!-- Step 8 -->
-            <div class="process-step step-8">
+            <div class="step-card">
                 <div class="step-number">8</div>
-                <div class="step-icon-box">
+                <div class="icon-box icon-box_migration">
                     <i class="fas fa-rocket"></i>
                 </div>
                 <h3 class="step-title">Go-Live & Support</h3>
@@ -368,6 +1071,490 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Seventh Section -->
+
+
+<!-- Eight Section -->
+<section class="mb_30 blue_bg">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title blue_title">
+            
+              <h3>Ready to Transform Your Business?</h3>
+              <p>for a seamless migration to Dynamics 365 Business Central.</p>
+          </div>
+
+          <div class="contactBtn">
+             <button>Contact Us <span> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></button>
+          </div>
+
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Eight Section -->
+
+
+<!-- Ninth Section -->
+
+<section class="mb_30">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">
+              <h2 >Migration</h2>
+              <h3>Dynamic Migration of Business Central Services</h3>
+              <p>Any business at some point or the other, feels that current ERP or accounting software is no longer able to sustain the growth. It is at that point that Dynamics 365 Business Central migration comes into play. At Veelead, we have a specialization in migrating companies to a modern ERP with zero disruption of their legacy systems that we tend to migrate to BC.</p>
+          </div>
+ <div class="migration-container">
+      
+      <div class="systems-grid">
+  <!-- Card 1 -->
+  <div class="system-card">
+    <div class="system-header">
+      <div class=" icon-box icon-box_migration">
+        <i class="fas fa-database"></i>
+      </div>
+      <div>
+        <h3 class="system-title">Microsoft Dynamics NAV</h3>
+        <p class="system-description">
+          Upgrade to Business Central and become cloud-ready, more scalable, and featuring improved functionality.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="system-card">
+    <div class="system-header">
+      <div class="icon-box icon-box_migration">
+        <i class="fas fa-server"></i>
+      </div>
+      <div>
+        <h3 class="system-title">Microsoft Dynamics GP</h3>
+        <p class="system-description">
+          Migrate to Business Central with minimal pain to achieve improved integration and future ERP support.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="system-card">
+    <div class="system-header">
+      <div class="icon-box icon-box_migration" >
+        <i class="fas fa-cloud"></i>
+      </div>
+      <div>
+        <h3 class="system-title">Microsoft Dynamics AX</h3>
+        <p class="system-description">
+          Streamline business operations and switch to a more flexible and agile platform.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="system-card">
+    <div class="system-header">
+      <div class="icon-box icon-box_migration">
+        <i class="fas fa-cube"></i>
+      </div>
+      <div>
+        <h3 class="system-title">QuickBooks</h3>
+        <p class="system-description">
+          If your accounting is becoming too basic, upgrade to an all-inclusive ERP that includes advanced financial management.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="system-card">
+    <div class="system-header">
+      <div class="icon-box icon-box_migration">
+        <i class="fas fa-hdd"></i>
+      </div>
+      <div>
+        <h3 class="system-title">Legacy ERP Systems (SAP, Oracle, Sage, etc.)</h3>
+        <p class="system-description">
+          Upgrade your old and expensive system to a unified cloud ERP platform.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="system-card">
+    <div class="system-header">
+      <div class="icon-box icon-box_migration">
+        <i class="fas fa-file-alt"></i>
+      </div>
+      <div>
+        <h3 class="system-title">Spreadsheets & Manual Processes</h3>
+        <p class="system-description">
+          Eliminate inefficiencies and implement an automation-based ERP system.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Ninth Section -->
+
+
+<!-- Tenth Section -->
+<section class="mb_30">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">
+              <h2 >AI Capabilities</h2>
+              <h3>AI Capabilities of Dynamics 365 Business Central</h3>
+             <p>The way business is conducted is being transformed by Artificial Intelligence. With Dynamics 365 Business Central Services, it is no longer an additional option, it is now an inseparable part of your ERP. This gives your business the ability to predict trends, respond faster and deliver results that would have never been realized by traditional systems.</p>
+          </div>
+             <div class="nav-container">
+        <div class="container-fluid px-4">
+            <ul class="nav nav-tabs ai_tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" href="#predictive" data-bs-toggle="tab">Predictive Forecasting</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cashflow" data-bs-toggle="tab">Cash Flow Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#inventory" data-bs-toggle="tab">Smart Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#insights" data-bs-toggle="tab">Data-Driven Insights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#workflow" data-bs-toggle="tab">Workflow Automation</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="ai_space">
+        <div class="tab-content">
+            <div class="tab-pane fade" id="predictive">
+                <div class="content-card">
+                    <div class="content-wrapper">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 17h2v-6H7v6zm4 0h2V7h-2v10zm4 0h2v-4h-2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="text-content">
+                            <div class="title-row">
+                                <h2 class="main-title">Predictive Forecasting</h2>
+                            </div>
+                            <p class="description">
+                                Content for Predictive Forecasting tab.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="cashflow">
+                <div class="content-card">
+                    <div class="content-wrapper">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 17h2v-6H7v6zm4 0h2V7h-2v10zm4 0h2v-4h-2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="text-content">
+                            <div class="title-row">
+                                <h2 class="main-title">Cash Flow Management</h2>
+                            </div>
+                            <p class="description">
+                                Content for Cash Flow Management tab.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="inventory">
+                <div class="content-card">
+                    <div class="content-wrapper">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 17h2v-6H7v6zm4 0h2V7h-2v10zm4 0h2v-4h-2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="text-content">
+                            <div class="title-row">
+                                <h2 class="main-title">Smart Inventory</h2>
+                            </div>
+                            <p class="description">
+                                Content for Smart Inventory tab.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade show active" id="insights">
+                <div class="content-card">
+                    <div class="content-wrapper">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 17h2v-6H7v6zm4 0h2V7h-2v10zm4 0h2v-4h-2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="text-content">
+                            <div class="title-row">
+                                <h2 class="main-title">Data-Driven Insights</h2>
+                                <span class="badge-custom">Make better decisions</span>
+                            </div>
+                            <p class="description">
+                                Business Central's AI delivers actionable insights through natural language queries, interactive dashboards, and automated reporting, empowering data-driven strategic decisions across the organization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="workflow">
+                <div class="content-card">
+                    <div class="content-wrapper">
+                        <div class="icon-box">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 17h2v-6H7v6zm4 0h2V7h-2v10zm4 0h2v-4h-2v4z"/>
+                            </svg>
+                        </div>
+                        <div class="text-content">
+                            <div class="title-row">
+                                <h2 class="main-title">Workflow Automation</h2>
+                            </div>
+                            <p class="description">
+                                Content for Workflow Automation tab.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+
+
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Tenth Section -->
+
+
+<!-- Eleventh Section -->
+<section class="mb_30">
+  <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+           <div class="title">
+              <h2 >Success Stories: <span>Real Results </span>from Real Clients </h2>
+              <h3>Industry-Focused Solutions</h3>
+              <p>No matter your industry, Veelead ensures Dynamics 365 Business Central works the way you need it to.</p>
+          </div>
+          <div class="container case-study-section">
+    <div class="owl-carousel owl-theme success-carousel">
+      
+      <!-- Card 1 -->
+      <div class="case-study-card">
+        <div class="case-image">
+          <img src="assets/images/caro_1.jpg" alt="Smart Factory">
+          <span class="category-badge">Manufacturing</span>
+        </div>
+        <div class="case-content">
+          <h5 class="case-title">Smart Factory BI Dashboard</h5>
+          <p class="case-description">Implemented real-time manufacturing analytics dashboard reducing downtime by 45% and increasing production efficiency.</p>
+          <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="case-study-card">
+        <div class="case-image">
+          <img src="assets/images/caro_2.jpg" alt="University ERP">
+          <span class="category-badge">Education</span>
+        </div>
+        <div class="case-content">
+          <h5 class="case-title">University ERP Transformation</h5>
+          <p class="case-description">Modernized legacy systems for 50,000+ students with integrated finance, admissions, and academic management.</p>
+          <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="case-study-card">
+        <div class="case-image">
+          <img src="assets/images/caro_3.jpg" alt="Retail Platform">
+          <span class="category-badge">Retail</span>
+        </div>
+        <div class="case-content">
+          <h5 class="case-title">Omnichannel Retail Platform</h5>
+          <p class="case-description">Unified online and offline operations for 200+ stores, improving inventory accuracy by 92% and customer satisfaction.</p>
+          <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+            <!-- Card 4 -->
+      <div class="case-study-card">
+        <div class="case-image">
+          <img src="assets/images/caro_1.jpg" alt="Smart Factory">
+          <span class="category-badge">Manufacturing</span>
+        </div>
+        <div class="case-content">
+          <h5 class="case-title">Smart Factory BI Dashboard</h5>
+          <p class="case-description">Implemented real-time manufacturing analytics dashboard reducing downtime by 45% and increasing production efficiency.</p>
+          <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="case-study-card">
+        <div class="case-image">
+          <img src="assets/images/caro_2.jpg" alt="University ERP">
+          <span class="category-badge">Education</span>
+        </div>
+        <div class="case-content">
+          <h5 class="case-title">University ERP Transformation</h5>
+          <p class="case-description">Modernized legacy systems for 50,000+ students with integrated finance, admissions, and academic management.</p>
+          <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="case-study-card">
+        <div class="case-image">
+          <img src="assets/images/caro_3.jpg" alt="Retail Platform">
+          <span class="category-badge">Retail</span>
+        </div>
+        <div class="case-content">
+          <h5 class="case-title">Omnichannel Retail Platform</h5>
+          <p class="case-description">Unified online and offline operations for 200+ stores, improving inventory accuracy by 92% and customer satisfaction.</p>
+          <a href="#" class="case-link">View Case Study →</a>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="explore-btn">Explore All Case Studies →</a>
+  </div>
+
+         </div>
+      </div>
+  </div>
+</section>
+<!-- Eleventh Section -->
+
+
+
+
+
+
+
+
+
+<!-- Footer Section -->
+   <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <div class="footer-logo">
+                           <img src="assets/images/footer_logo.png" class="img-fluid" alt="">
+                        </div>
+                        <p class="footer-description">
+                            Your trusted partner for Dynamics 365 Business Central solutions. Transforming businesses with innovative ERP implementations.
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h3 class="footer-heading">Services</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Implementation</a></li>
+                            <li><a href="#">Migration Services</a></li>
+                            <li><a href="#">Support & Maintenance</a></li>
+                            <li><a href="#">Customization</a></li>
+                            <li><a href="#">Training</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Industries</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h3 class="footer-heading">Contact Us</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-envelope contact-icon"></i>
+                                <a href="mailto:info@veelead.com">info@veelead.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone contact-icon"></i>
+                                <a href="tel:+12345678900">+1 (234) 567-890</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt contact-icon"></i>
+                                <span>123 Business Center Dr.<br>New York, NY 10001</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 VeeLead. All rights reserved.</p>
+                <ul class="footer-bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<!-- Footer Section -->
+
+
+    <!-- jQuery START -->
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <!-- Owl Carousel JS (AFTER jQuery) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/custom.js" type="text/javascript"></script>
+    <!-- jQuery END -->
+
+    <script></script>
+  </body>
 </html>
