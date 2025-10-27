@@ -1171,6 +1171,7 @@ a:hover {
 
         .right-content {
             flex: 1;
+            height: 100%;
             background: linear-gradient(135deg, #001a33 0%, #003d7a 100%);
             position: relative;
             overflow: hidden;
@@ -1561,15 +1562,20 @@ a:hover {
 }
 
 .right-content img{
-     min-height: 395px;
+    max-height: 100%;
+     height: 100%;
+    object-fit: cover;
+}
+/* .right_content_two img{
+   min-height: 370px;
      height: auto;
     object-fit: cover;
 }
-.right_content_two img{
-   min-height: 369px;
+.right_content_three img{
+   min-height: 344px;
      height: auto;
     object-fit: cover;
-}
+} */
 
 
         .blue_title h3{
