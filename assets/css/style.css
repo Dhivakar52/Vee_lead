@@ -2481,10 +2481,10 @@ a:hover {
 @media only screen and (min-width: 1600px) and (max-width: 1919px) {
 }
 @media only screen and (min-width: 1400px) and (max-width: 1599px) {
-  .right-content img{
+  /* .right-content img{
      height: 369px;
     object-fit: cover;
-}
+} */
 }
   @media (max-width: 1200px) {
             .navbar-nav-custom {
